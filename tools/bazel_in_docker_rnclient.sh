@@ -58,7 +58,7 @@ function get_bazel_cmd() {
 (( $# < 1 )) && usage
 [[ "$1" = "-"* ]] && [[ "$1" != "-d" ]] && usage
 
-IMAGE="purn3ndu/tfserving-resnet50-client:1"
+IMAGE="purn3ndu/tfserving-resnet50-client:latest"
 [[ "$1" = "-d" ]] && IMAGE=$2 && shift 2 || true
 [[ "${IMAGE}" = "" ]] && usage
 
