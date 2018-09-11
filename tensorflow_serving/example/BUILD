@@ -53,6 +53,30 @@ py_binary(
 )
 
 py_binary(
+    name = "resnet_saved_model",
+    srcs = [
+        "resnet_saved_model.py",
+    ],
+    srcs_version = "PY2AND3",
+    deps = [
+        "@org_tensorflow//tensorflow:tensorflow_py",
+    ],
+)
+
+py_binary(
+    name = "resnet_client",
+    srcs = [
+        "resnet_client.py",
+    ],
+    srcs_version = "PY2AND3",
+    deps = [
+        "//tensorflow_serving/apis:predict_proto_py_pb2",
+        "//tensorflow_serving/apis:prediction_service_proto_py_pb2",
+        "@org_tensorflow//tensorflow:tensorflow_py",
+    ],
+)
+
+py_binary(
     name = "inception_saved_model",
     srcs = [
         "inception_saved_model.py",
